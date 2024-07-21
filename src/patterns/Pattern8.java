@@ -1,12 +1,16 @@
-package myfirstprogram;
+package patterns;
 
 import java.util.Scanner;
 
-public class Pattern5 {
+public class Pattern8 {
 	static void pattern(int a) {
 		for (int i = 0; i < a; i++) {
-			for (int j = 0; j <a-i; j++) {
-				System.out.print("* ");
+			for (int j = 0; j < i; j++) {
+				System.out.print(" ");
+			}
+			
+			for (int j = 0; j <(2*a-1)-2*i; j++) {
+				System.out.print("*");
 			}
 			System.out.println();
 			

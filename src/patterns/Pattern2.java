@@ -1,12 +1,13 @@
-package myfirstprogram;
+package patterns;
 
 import java.util.Scanner;
 
-public class Pattern6 {
+public class Pattern2 {
+		
 	static void pattern(int a) {
 		for (int i = 0; i < a; i++) {
-			for (int j = 1; j <=a-i; j++) {
-				System.out.print(j);
+			for (int j = 0; j <=i; j++) {
+				
 			}
 			System.out.println();
 			
@@ -20,4 +21,5 @@ public class Pattern6 {
 		int a = myobj.nextInt();
 		pattern(a);
 	}
+
 }

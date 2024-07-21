@@ -1,8 +1,8 @@
-package myfirstprogram;
+package patterns;
 
 import java.util.Scanner;
 
-public class Pattern7 {
+public class Pattern9 {
 	static void pattern(int a) {
 		for (int i = 0; i < a; i++) {
 			for (int j = 0; j <a-i-1; j++) {
@@ -13,6 +13,17 @@ public class Pattern7 {
 				
 			}
 			
+			System.out.println();
+			
+		}
+		for (int i = 0; i < a; i++) {
+			for (int j = 0; j < i; j++) {
+				System.out.print(" ");
+			}
+			
+			for (int j = 0; j <(2*a-1)-2*i; j++) {
+				System.out.print("*");
+			}
 			System.out.println();
 			
 		}
