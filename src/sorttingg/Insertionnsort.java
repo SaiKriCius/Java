@@ -1,13 +1,13 @@
-package basic_programs;
+package sorttingg;
 
-public class Basic {
-	static void slectionsort(int[] arr,int n) {
-		for (int i = 0; i < n-1; i++) {
-			for (int j = i+1; j < n; j++) {
+public class Insertionnsort {
+	static void insertionssort(int[] arr,int n) {
+		for (int i = 1; i <n; i++) {
+			for (int j = i; j >0 ; j--) {
 				if (arr[j]<arr[j-1]) {
-					int temp = arr[i];
-					arr[i]=arr[j];
-					arr[j] = temp;
+					int temp=arr[j-1];
+					arr[j-1]=arr[j];
+					arr[j]=temp;
 				}
 			}
 		}	
@@ -23,8 +23,9 @@ public class Basic {
 			System.out.print(i+" ");
 		}
 		System.out.println();
-		slectionsort(arr,n);
+		insertionssort(arr,n);
 		
 	
 	}
+		
 }
