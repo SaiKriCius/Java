@@ -1,30 +1,38 @@
 package basic_programs;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Basic {
-	static void slectionsort(int[] arr,int n) {
-		for (int i = 0; i < n-1; i++) {
-			for (int j = i+1; j < n; j++) {
-				if (arr[j]<arr[j-1]) {
-					int temp = arr[i];
-					arr[i]=arr[j];
-					arr[j] = temp;
-				}
-			}
-		}	
-		for (int i : arr) {
-			System.out.print(i+" ");
+	public static void findSubsets(List<Integer> nums, int target, int start, List<Integer> path,
+			List<List<Integer>> result) {
+		if (target == 0) {
+			result.add(new ArrayList<>(path));
+			return;
+		}
+		for (int i = start; i < nums.size(); ++i) {
+			if (nums.get(i) > target)
+				continue;
+			path.add(nums.get(i));
+			findSubsets(nums, target - nums.get(i), i + 1, path, result);
+			path.remove(path.size() - 1);
 		}
 	}
 
+	public static List<List<Integer>> findSubsetsThatSumToTarget(List<Integer> nums, int target) {
+		List<List<Integer>> result = new ArrayList<>();
+		findSubsets(nums, target, 0, new ArrayList<>(), result);
+		return result;
+	}
+
 	public static void main(String[] args) {
-		int n=6;
-		int[] arr = {25, 47, 3, 92, 58, 17};
-		for (int i : arr) {
-			System.out.print(i+" ");
+		List<Integer> nums = List.of(1, 2, 4, 5, 7, 9, 10);
+		int target = 15;
+		List<List<Integer>> result = findSubsetsThatSumToTarget(nums, target);
+
+		System.out.println("Subsets that sum to " + target + ":");
+		for (List<Integer> subset : result) {
+			System.out.println(subset);
 		}
-		System.out.println();
-		slectionsort(arr,n);
-		
-	
 	}
 }
